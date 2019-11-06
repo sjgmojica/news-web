@@ -9,22 +9,12 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Container from '@material-ui/core/Container';
 
+
 const columns = [
   { id: 'name', label: 'Article Title', minWidth: 170 },
   { id: 'description', label: 'Description', minWidth: 170 },
   { id: 'date', label: 'Date', minWidth: 170 },
   { id: 'image', label: 'Image', minWidth: 100 }
-];
-
-function createData(name: string, date: string, image : string, description : string) {
-  return { name, date, image, description };
-}
-
-const rows = [
-  createData('India', '2019-10-11', 'image1', 'Test desc'),
-  createData('China', '2019-10-11', 'image1', 'Test desc'),
-  createData('Italy', '2019-10-11', 'image1', 'Test desc'),
-  createData('United States', '2019-10-11', 'image1', 'Test desc')
 ];
 
 const useStyles = makeStyles({
@@ -92,7 +82,7 @@ export default function TableComponent(value : any ) {
       <TablePagination
         rowsPerPageOptions={[20, 25, 100]}
         component="div"
-        count={rows.length}
+        count={data && data.length > 1 ? data.length : 0}
         rowsPerPage={rowsPerPage}
         page={page}
         backIconButtonProps={{
