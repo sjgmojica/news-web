@@ -128,7 +128,7 @@ const App: React.FC = () => {
                     <Videocam />
                   </Avatar>
                 </ListItemAvatar>
-                <ListItemText primary="Entertainment" secondary="News Source 3" onClick={(e) => fetchMore('entertainment')}/>
+                <ListItemText primary="Entertainment" secondary="News Source 3" onClick={() => fetchMore('entertainment')}/>
               </ListItem>
               <Divider />
           </List>
